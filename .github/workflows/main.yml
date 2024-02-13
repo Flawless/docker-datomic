@@ -16,7 +16,7 @@ jobs:
         images: |
           ${{ vars.DOCKERHUB_USERNAME }}/${{ env.REPOSITORY }}
         tags: |
-            type=semver,pattern={{major}}.{{minor}}.{{path}}
+            type=semver,pattern={{version}}
     - name: set up docker buildx
       uses: docker/setup-buildx-action@v3
     - name: Login to Docker Hub
