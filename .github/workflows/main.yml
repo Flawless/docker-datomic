@@ -16,7 +16,7 @@ jobs:
         images: |
           ${{ vars.DOCKERHUB_USERNAME }}/${{ env.REPOSITORY }}
         tags: |
-            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}.{{path}}
     - name: set up docker buildx
       uses: docker/setup-buildx-action@v3
     - name: Login to Docker Hub
@@ -34,4 +34,4 @@ jobs:
         labels: ${{ steps.meta.outputs.labels }}
         push: true
         build-args: |
-          DATOMIC_VERSION=${{ steps.meta.outputs.tags.0 }}
+          DATOMIC_VERSION=${{ steps.meta.outputs.tags[0] }}
