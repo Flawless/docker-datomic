@@ -34,4 +34,4 @@ jobs:
         labels: ${{ steps.meta.outputs.labels }}
         push: true
         build-args: |
-          DATOMIC_VERSION=${{ steps.meta.outputs }}
+          DATOMIC_VERSION=${{ fromJSON(steps.meta.outputs.json).labels['org.opencontainers.image.version'] }}
