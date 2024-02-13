@@ -1,7 +1,7 @@
 on:
   push:
     tags:
-      - v1.*.*
+      - v1.**
 env:
   REPOSITORY: 'datomic-transactor'
 jobs:
