@@ -12,4 +12,5 @@ RUN curl -SL https://datomic-pro-downloads.s3.amazonaws.com/$DATOMIC_VERSION/dat
 
 WORKDIR /opt/datomic-pro
 
-ENTRYPOINT ["bin/transactor", "transactor.properties"]
+ENTRYPOINT ["bin/transactor"]
+CMD ["/transactor.properties"]
