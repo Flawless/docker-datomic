@@ -1,0 +1,16 @@
+* Usage
+
+#+BEGIN_SRC sh
+docker pull filipd1ck/datomic
+#+END_SRC
+
+** Starting transactor
+#+BEGIN_SRC sh
+docker run -p 4334:4334 -v "$(pwd)"/transactor.properties:/ filipd1ck/datomic transactor /transactor.properties
+#+END_SRC
+command above assumes you have `transactor.properties` file in the current dir
+
+** Starting console
+#+BEGIN_SRC sh
+docker run -p 9000:9000 filipd1ck/datomic console -p 9000 sql 'datomic:sql://?jdbc:postgresql://your-db.hostname:5432/datomic?user=datomic&password=datomic'
+#+END_SRC

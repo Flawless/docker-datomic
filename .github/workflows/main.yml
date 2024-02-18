@@ -3,7 +3,7 @@ on:
     tags:
       - v1.**
 env:
-  REPOSITORY: 'datomic-transactor'
+  REPOSITORY: 'datomic'
 jobs:
   deploy:
     runs-on: ubuntu-latest

@@ -10,7 +10,4 @@ RUN curl -SL https://datomic-pro-downloads.s3.amazonaws.com/$DATOMIC_VERSION/dat
     && mv /opt/datomic-pro-$DATOMIC_VERSION /opt/datomic-pro \
     && rm -f /tmp/datomic.zip
 
-WORKDIR /opt/datomic-pro
-
-ENTRYPOINT ["bin/transactor"]
-CMD ["/transactor.properties"]
+WORKDIR /opt/datomic-pro/bin
